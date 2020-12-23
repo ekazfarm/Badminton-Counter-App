@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="@+id/tvTeamA"
+        app:layout_constraintBottom_toBottomOf="@+id/btnMinusTeamA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvTeamA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team A"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/line"
+       app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/scoreteamA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTeamA"/>
+    
+    <TextView
+        android:id="@+id/tvwiningA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leading Team"
+        android:visibility="gone"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreteamA"
+        app:layout_constraintEnd_toStartOf="@+id/line"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/btnPlusA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:onClick="PlusA"
+        app:layout_constraintTop_toBottomOf="@+id/scoreteamA"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorPrimary"/>
+
+    <Button
+        android:id="@+id/btnMinusTeamA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-1"
+        android:onClick="MinusA"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlusA"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/tvTeamB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team B"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/line"/>
+
+    <TextView
+        android:id="@+id/scoreteamB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+       app:layout_constraintTop_toBottomOf="@+id/tvTeamB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/line"/>
+
+    <TextView
+        android:id="@+id/tvWiningB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leading Team"
+        android:visibility="gone"
+        android:textColor="@color/colorAccent"
+       app:layout_constraintTop_toBottomOf="@+id/scoreteamB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/line"
+        />
+
+    <Button
+        android:id="@+id/btnPlusB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="PlusB"
+        android:text="+1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/scoreteamB"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorPrimary"/>
+
+    <Button
+        android:id="@+id/btnMinusTeamB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-1"
+        android:onClick="MinusB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlusB"
+        app:layout_constraintStart_toEndOf="@id/line"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorPrimary"/>
+
+
+    <Button
+        android:id="@+id/btnreset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Reset"
+        android:onClick="Reset"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
